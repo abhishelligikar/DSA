@@ -10,3 +10,19 @@
 n = int(input("Enter number of lines triangle to have : "))
 for i in range(1,n+1):  # Rangle is exclusive of last index
     print(i * f"{i}")
+    
+for i in range(1,n+1):  # Rangle is exclusive of last index
+    print(i * f"{i} ")
+    
+# Left angled triangle
+for i in range(1, n+1):
+    s = ' ' * (n-i)
+    print(s, end='')
+    s = f"{i}" * i
+    print(s)
+    
+for i in range(1, n+1):
+    s = '  ' * (n-i)
+    print(s, end='')
+    s = f"{i} " * i
+    print(s)
