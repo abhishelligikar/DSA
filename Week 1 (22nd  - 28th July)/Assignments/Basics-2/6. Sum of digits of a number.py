@@ -7,7 +7,7 @@ for i in num:
     
 print(sumValue)
 
-# Method -2 
+# Method - 2 
 num = int(originalNum)
 sumValue = 0
 
@@ -67,3 +67,18 @@ def getsumValue(num):
 
 print(getsumValue(num))
 
+# Method - 7        # One line recursive
+num = int(originalNum)
+sumValue = 0
+
+def sumDigits(n):
+    return 0 if n == 0 else int(n % 10) + sumDigits(int(n / 10)) 
+   
+print(sumDigits(num))
+
+# Method - 8
+num = int(originalNum)
+sumValue = 0
+
+list_of_num = [int(d) for d in input("Enter the number : ")]
+print(sum(num))
