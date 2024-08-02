@@ -26,6 +26,9 @@
 # Follow up: It is very easy to come up with a solution with a runtime of O(n log n). Can you do it in linear time O(n) and possibly in a single pass?
 # Can you do it without using any built-in function (i.e., like __builtin_popcount in C++)?
 
+from typing import List
+
+
 originalNum = input("Enter the number : ")
 num = int(originalNum)
 
@@ -43,3 +46,12 @@ def countBits(n: int):
         return lst
     
 print(countBits(num))
+
+def countBits1(n: int) -> List[int]:
+        lst: List[int] = [0] * (n+1)
+
+        for i in range (1,n+1):
+            lst[i] = lst[i >> 1] + (i & 1)
+        return lst
+    
+print(countBits1(num))
