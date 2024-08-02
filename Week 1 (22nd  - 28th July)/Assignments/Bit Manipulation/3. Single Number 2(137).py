@@ -20,7 +20,7 @@ from collections import defaultdict
 from typing import List
 
 
-lst = list(map(int, input("Enter two (Numbers)strings in binary format : ").split()))
+lst = list(map(int, input("Enter (Numbers)strings format : ").split()))
 
 def singleNumber2(nums: List[int]) -> int:
     count = defaultdict(int)
@@ -52,8 +52,15 @@ print(f"Non Repetative number from list {lst} is {singleNumber22(lst)}")
 def singleNumber23(nums: List[int]) -> int:
     ones, twos = 0, 0
     for num in nums:
-        ones = (ones ^ num) & (~twos)
-        twos = (twos ^ num) & (~ones)
+        xorNumForOnes = ones ^ num
+        negateTwos = ~twos
+        ones = xorNumForOnes & negateTwos
+        # ones = (ones ^ num) & (~twos)
+        
+        xorNumForTwos = twos ^ num
+        negateOnes = ~ones
+        twos = xorNumForTwos & negateOnes
+        # twos = (twos ^ num) & (~ones)
         
     return ones
 
